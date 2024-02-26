@@ -1,0 +1,21 @@
+CREATE TABLE job_titles (
+	id PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	title VARCHAR(40) NOT NULL
+);
+
+
+
+CREATE DATABASE blog_IPb22;
+
+USE blog_IPb22;
+
+CREATE TABLE posts (
+	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	title VARCHAR(255) NOT NULL
+);
+
+INSERT INTO posts
+(title)
+VALUES
+("My First Blog Post"),
+("My Second Blog Post");
