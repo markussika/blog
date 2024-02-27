@@ -11,7 +11,7 @@
 /*INSERT INTO posts
 (title)
 VALUES 
-("My First Blog Post"), 
+("My First Blog Post "), 
 ( "My Second Blog Post");
 */
 
