@@ -1,19 +1,13 @@
 <?php
-
+// Šis fails ir, lai izvadītu datus no datubāzes uz
+// lapu 
 require "functions.php";
+require "Database.php";
 
-echo "Hi <br>";
-
-$connection_string = "mysql:host=localhost;dbname=blog_IPb22;user=root;password=root;charset=utf8mb4";
-$pdo = new PDO($connection_string);
-
-// 1. Sagatavot SQL izpildei
-$query = $pdo->prepare("SELECT * FROM posts");
-
-// 2. Izpilīt SQL
-$query->execute();
-// 3. Beidzot dabūt rezultātus, visus pie tam!
-$posts = $query->fetchAll(PDO::FETCH_ASSOC);
+$db = new Database();
+$posts = $db
+          ->execute("SELECT * FROM posts")
+          ->fetchAll();
 
 echo "<ul>";
 foreach($posts as $post) {
