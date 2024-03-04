@@ -3,8 +3,8 @@
 
 return [
     "host" => "localhost",
-    "dbname" => "sex",
-    "user" =>"sex",
+    "dbname" => "blog_sika",
+    "user" =>"root",
     "password" => "",
-    "charset" => "sex"
+    "charset" => "utf8mb4"
 ];

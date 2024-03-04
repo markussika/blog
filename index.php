@@ -5,10 +5,26 @@ $config = require "config.php";
 
 
 
-$db = new Database($config);
-$posts = $db->execute("SELECT * FROM posts")
-            ->fetchALL(PDO::FETCH_ASSOC);
+$query = "SELECT * FROM posts";
 
+if(isset($_GET["id"]) && $_GET["id"] != "") {
+    $id = $_GET["id"];
+    $query = "SELECT * FROM posts WHERE id=$id";
+};
+
+
+$db = new Database($config);
+$posts = $db->execute($query)
+            ->fetchALL();
+
+echo "<form>";
+echo "<input name='id' />";
+echo "<button>Submit</button>";
+echo "</form>";
+
+
+
+echo "<h1>Posts</h1>";
 
 echo "<ul>";
 foreach($posts as $post){
