@@ -9,6 +9,12 @@ $config = require("config.php");
 $query = "SELECT * FROM posts";
 $params = [];
 
+if (isset($_GET["id"]) && $_GET["id"] != "") {
+  $id = $_GET["id"];
+  $query .= " WHERE id=:id";
+  $params[":id"] = $id;
+}
+
 if (isset($_GET["category"]) && $_GET["category"] != "") {
   $category = $_GET["category"];
   $query .= " JOIN categories
@@ -16,12 +22,6 @@ if (isset($_GET["category"]) && $_GET["category"] != "") {
               WHERE categories.name = :category
             ";
   $params[":category"] = $category;
-}
-
-if (isset($_GET["id"]) && $_GET["id"] != "") {
-  $id = $_GET["id"];
-  $query .= " WHERE id=:id";
-  $params[":id"] = $id;
 }
 
 $db = new Database($config);
