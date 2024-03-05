@@ -15,12 +15,9 @@ $this->pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
 }
     
-    public function execute($query_string){
-        
-
-
-$query = $this->pdo->prepare($query_string); 
-$query->execute();
+    public function execute($query_string, $params){
+        $query = $this->pdo->prepare($query_string); 
+        $query->execute($params);
 return  $query;
 
     }
