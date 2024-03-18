@@ -1,7 +1,8 @@
 <?php
 
 return [
-  "/" => "controllers/index.php",
+  "/" => "controllers/posts.php",
+  "/create" => "controllers/posts-create.php",
   "/about" => "controllers/about.php",
   "/story" => "controllers/story.php"
 ];
