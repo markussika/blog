@@ -2,8 +2,8 @@
 
 return [
   "host" => "localhost",
-  "dbname" => "blog_IPb22",
+  "dbname" => "blog_Sika",
   "user" => "root",
-  "password" => "root",
+  "password" => "",
   "charset" => "utf8mb4"
 ];

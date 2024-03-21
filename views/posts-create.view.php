@@ -5,7 +5,7 @@
 
 <form method="POST">
   <label>Title:
-    <input name="matīss"/>
+    <input name="title"/>
   </label>
   <label>Category ID:
     <input name="category-id"/>
