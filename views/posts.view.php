@@ -26,7 +26,7 @@
 
 <ul>
 <?php foreach($posts as $post) { ?>
-  <li> <?= $post["title"]?> </li>
+  <li> <?= htmlspecialchars($post["title"])?> </li>
 <?php } ?>
 </ul>
 
