@@ -1,5 +1,6 @@
 <?php
 
+require "Validator.php";
 require "Database.php";
 $config = require("config.php");
 $db = new Database($config);
@@ -8,12 +9,8 @@ $db = new Database($config);
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $errors = [];
 
-  if (trim($_POST["title"]) == "") {
-    $errors["title"] = "Title cannot be empty";
-  }
-
-  if (strlen($_POST["title"]) > 255) {
-    $errors["title"] = "Title too long";
+  if (!Validator::string($_POST["title"], min: 1, max: 255)) {
+    $errors["title"] = "Title cannot be empty or too long";
   }
 
   if ($_POST["category-id"] < 1 || $_POST["category-id"] > 3) {
