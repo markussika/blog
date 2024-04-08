@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   
   $query = "DELETE FROM posts WHERE id = :id";
   $params = [ ":id" => $_POST["id"]];
-  dd($_POST["id"]);
+ 
   $db->execute($query, $params);
 }
 
