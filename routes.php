@@ -7,5 +7,8 @@ return [
   "/story" => "controllers/story.php",
   "/delete" => "controllers/posts/delete.php",
   "/show" => "controllers/posts/show.php",
-  "/edit" => "controllers/posts/edit.php"
+  "/edit" => "controllers/posts/edit.php",
+  "/login" => "controllers/posts/login.php",
+  "/register" => "controllers/posts/register.php",
+  "/logout" => "controllers/posts/logout.php"
 ];
